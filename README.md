@@ -1,5 +1,5 @@
 # Mini Projects 
-This file provides guidance to **Mini Projects** when working with code or files in this repository.
+This **README** provides guidance to my **Mini Projects** when working with code or files in this repository.
 
 ## Repository Structure
 
