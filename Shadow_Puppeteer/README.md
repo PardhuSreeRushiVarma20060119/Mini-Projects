@@ -1,4 +1,4 @@
-# Epsilon Shift — Adversarial Fingerprint Obfuscation via Sparse, Deterministic Canvas/WebGL/Audio Perturbations
+# EpsilonShift — Adversarial Fingerprint Obfuscation via Sparse, Deterministic Canvas/WebGL/Audio Perturbations
 
 A small research-grade prototype that injects tiny adversarial perturbations into browser fingerprinting APIs (Canvas, WebGL, Audio) via a Playwright Python harness and measures fingerprint differences before/after. Useful as a privacy-defense experiment and starting point for more advanced research.
 
