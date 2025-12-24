@@ -19,6 +19,10 @@ For controlled experimentation and reproducibility, the perturbation seed can be
 
 **Threat Model:** The prototype targets passive browser fingerprinting techniques that rely on deterministic rendering and signal extraction, and does not attempt to evade active tracking, network-layer identifiers, or privileged browser instrumentation.
 
+## NOTE : (MUST READ)
+
+“This work provides an exploratory, open-source experimental scaffold for studying fingerprint perturbation sensitivity. The prototype focuses on **within-run** perturbation effects under realistic execution conditions. **Cross-run reproducibility and population-level analysis** are intentionally left to **downstream experimentation.**”
+
 ---
 
 ## Quick Start (5 minutes)
@@ -156,3 +160,4 @@ Also consider capturing screenshots before/after and computing SSIM to verify vi
 
 ### Interpretation:
 Canvas was meaningfully changed (`canvas_sim = 0.455`) but the overall fingerprint still has many unchanged signals.
+
