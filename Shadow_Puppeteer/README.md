@@ -127,6 +127,8 @@ Also consider capturing screenshots before/after and computing SSIM to verify vi
 - This tool is a **privacy defense research prototype** — do not use to evade lawful monitoring or for illegal purposes  
 - Keep perturbations conservative on sites with critical canvas usage (e.g., online editors or games)  
 
+**Adversarial fingerprint testing is performed exclusively in controlled environments or on pages with explicit permission, as injecting perturbations into third-party websites may disrupt functionality and violate usage policies.**
+
 ---
 
 ## Next Steps (Suggested Enhancements)
