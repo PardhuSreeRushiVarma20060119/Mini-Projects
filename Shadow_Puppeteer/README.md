@@ -1,5 +1,9 @@
 # EpsilonShift — An Experimental Probe of Sparse Adversarial Perturbations (Canvas/WebGL/Audio) in Browser Fingerprinting
 
+**Experiment Query** : Do sparse, deterministic adversarial perturbations measurably alter browser fingerprinting surfaces under realistic execution conditions?
+
+**Experimental Objective** : The objective of this experiment is to assess whether sparse, deterministic adversarial perturbations applied to browser rendering and signal-extraction surfaces produce measurable changes in browser fingerprints under realistic execution conditions.
+
 A small research-grade prototype that injects tiny adversarial perturbations into browser fingerprinting APIs (Canvas, WebGL, Audio) via a Playwright Python harness and measures fingerprint differences before/after. Useful as a privacy-defense experiment and starting point for more advanced research.
 
 ---
