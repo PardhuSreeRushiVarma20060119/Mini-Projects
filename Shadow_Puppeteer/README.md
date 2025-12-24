@@ -161,4 +161,6 @@ Also consider capturing screenshots before/after and computing SSIM to verify vi
 
 ### Interpretation:
 Canvas was meaningfully changed (`canvas_sim = 0.455`) but the overall fingerprint still has many unchanged signals.
+## Observation 
 
+Even extremely sparse, low-amplitude perturbations (≈0.6% of pixels) were sufficient to measurably alter canvas fingerprints without disrupting browser behavior.
