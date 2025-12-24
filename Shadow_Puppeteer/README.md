@@ -17,6 +17,8 @@ EpsilonShift applies session-scoped deterministic perturbations to browser finge
 
 For controlled experimentation and reproducibility, the perturbation seed can be fixed, enabling identical perturbations across runs and supporting variance analysis. The current prototype prioritizes realism by default, with experimental determinism treated as a configurable mode.
 
+**Threat Model:** The prototype targets passive browser fingerprinting techniques that rely on deterministic rendering and signal extraction, and does not attempt to evade active tracking, network-layer identifiers, or privileged browser instrumentation.
+
 ---
 
 ## Quick Start (5 minutes)
@@ -52,7 +54,7 @@ You should see `snaps.json` created and `evaluate.py` will print similarity metr
 
 ## Files & Purpose
 
-### `anti_fingerprint_inject.js`
+### `anti_fingerprint.js`
 JS injected via Playwright `add_init_script`.  
 Overrides/patches:
 - `HTMLCanvasElement.prototype.toDataURL` (can extend to `toBlob` / `getImageData`)  
