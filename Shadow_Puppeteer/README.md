@@ -95,6 +95,8 @@ python evaluate.py <SNAPS_JSON>
 
 ## Interpreting Metrics (Plain English)
 
+**Note**: *_sim denotes similarity between pre- and post-perturbation signals, not simulation.
+
 - **canvas_sim (0..1)**: similarity of canvas image before vs after. *Lower = more change*.  
 - **gpu_sim**: whether reported WebGL renderer string changed (1 = same, 0 = different).  
 - **composite (0..1)**: weighted aggregate of all signals. *1 = unchanged; closer to 0 = altered fingerprint*.  
