@@ -11,6 +11,12 @@ A small research-grade prototype that injects tiny adversarial perturbations int
 - **`testsite.html`** — Tiny test page to run locally.  
 - **`requirements.txt`** — Python dependencies.
 
+## Design Note (Determinism vs. Realism) 
+
+EpsilonShift applies session-scoped deterministic perturbations to browser fingerprinting surfaces. Each browser session initializes a deterministic PRNG seed, ensuring that perturbations remain stable within a session while varying across fresh sessions. This design reflects realistic privacy-defense constraints, preventing the perturbation pattern itself from becoming a stable fingerprint across sessions.
+
+For controlled experimentation and reproducibility, the perturbation seed can be fixed, enabling identical perturbations across runs and supporting variance analysis. The current prototype prioritizes realism by default, with experimental determinism treated as a configurable mode.
+
 ---
 
 ## Quick Start (5 minutes)
