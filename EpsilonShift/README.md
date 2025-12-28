@@ -11,7 +11,7 @@ A small research-grade prototype that injects tiny adversarial perturbations int
 
 ## What this repo contains
 - **`anti_fingerprint.js`** — JS code injected into pages to perturb canvas/WebGL/audio outputs.  
-- **`shadow_puppeteer.py`** — Playwright Python harness: collects fingerprint snapshot before/after injection and saves JSON.  
+- **`epsilonshift.py`** — Playwright Python harness: collects fingerprint snapshot before/after injection and saves JSON.  
 - **`evaluate.py`** — Simple evaluator that computes similarity metrics (`canvas_sim`, `gpu_sim`, `composite`).  
 - **`testsite.html`** — Tiny test page to run locally.  
 - **`requirements.txt`** — Python dependencies.
@@ -52,7 +52,7 @@ playwright install
 python -m http.server 8000
 
 # In another terminal:
-python shadow_puppeteer.py --target http://localhost:8000/testsite.html --out snaps.json
+python epsilonshift.py --target http://localhost:8000/testsite.html --out snaps.json
 python evaluate.py snaps.json
 ```
 
@@ -71,7 +71,7 @@ Overrides/patches:
 
 Uses a deterministic PRNG (xorshift) and configurable amplitude (**EPS**) and pixel count.
 
-### `shadow_puppeteer.py`
+### `epsilonshift.py`
 - Launches Chromium, collects a fingerprint snapshot via a JS snippet (FINGERPRINT_JS)  
 - Relaunches with `anti_fingerprint.js` added as an init script and collects a second snapshot  
 - Writes a JSON file with pre and post snapshots  
@@ -85,9 +85,9 @@ Uses a deterministic PRNG (xorshift) and configurable amplitude (**EPS**) and pi
 
 ## Command-line Usage
 ```bash
-python shadow_puppeteer.py --target <URL> --out <FILE>
+python epsilonshift.py --target <URL> --out <FILE>
 # Use --no-headless to run with visible browser
-python shadow_puppeteer.py --target <URL> --out snaps.json --no-headless
+python epsilonshift.py --target <URL> --out snaps.json --no-headless
 
 python evaluate.py <SNAPS_JSON>
 ```
@@ -114,7 +114,7 @@ Edit `anti_fingerprint.js`:
 - **EPS** — pixel amplitude (default 2.0). Increase to 4–8 for stronger effect  
 - **Perturbation loop count** (default 64). Increase to 256 to touch more pixels  
 
-Re-run `shadow_puppeteer.py` and `evaluate.py` after changes.  
+Re-run `epsilonshift.py` and `evaluate.py` after changes.  
 Run multiple trials to get mean/stddev — fingerprints may vary slightly per run.
 
 ---
@@ -122,7 +122,7 @@ Run multiple trials to get mean/stddev — fingerprints may vary slightly per ru
 ## Headed Runs & Visual Checks
 Use `--no-headless` to visually inspect pages and ensure perturbations do not break UX:
 ```bash
-python shadow_puppeteer.py --target <URL> --out snaps.json --no-headless
+python epsilonshift.py --target <URL> --out snaps.json --no-headless
 ```
 
 Also consider capturing screenshots before/after and computing SSIM to verify visual fidelity.
@@ -140,7 +140,7 @@ Also consider capturing screenshots before/after and computing SSIM to verify vi
 
 ## Next Steps (Suggested Enhancements)
 - Add `run_many.py` to run N trials per target and aggregate results (mean/std) into CSV  
-- Add CLI flags to `shadow_puppeteer.py` to parametrize EPS and pixel count without editing JS  
+- Add CLI flags to `epsilonshift.py` to parametrize EPS and pixel count without editing JS  
 - Create a simple adversarial optimizer (hill-climb) to maximize canvas hash change with minimal visual impact  
 - Convert the injector to a browser extension for easier end-user testing  
 - Integrate FingerprintJS collector for more realistic fingerprint features  
@@ -148,7 +148,7 @@ Also consider capturing screenshots before/after and computing SSIM to verify vi
 ---
 
 ## Troubleshooting
-- **FileNotFoundError reading `anti_fingerprint.js`**: run `shadow_puppeteer.py` from project root or update script to use `Path(__file__).parent`  
+- **FileNotFoundError reading `anti_fingerprint.js`**: run `epsilonshift.py` from project root or update script to use `Path(__file__).parent`  
 - **Playwright errors launching browser**: run `playwright install` and ensure Chromium is installed  
 - **Visual artifacts after increasing EPS**: reduce EPS or fewer perturbed pixels  
 

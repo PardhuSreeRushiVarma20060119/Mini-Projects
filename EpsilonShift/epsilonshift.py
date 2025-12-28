@@ -1,5 +1,5 @@
-# shadow_puppeteer.py
-# Usage: python shadow_puppeteer.py --target <URL> --out snaps.json
+# epsilonshift.py
+# Usage: python epsilonshift.py --target <URL> --out snaps.json
 
 import argparse
 import json
