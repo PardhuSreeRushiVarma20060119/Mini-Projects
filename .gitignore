@@ -44,3 +44,5 @@ env/
 # Platform specific
 .replit
 .upm
+generated-icon.png
+theme.json
