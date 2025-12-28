@@ -1,5 +1,5 @@
 # EpsilonShift — An Experimental Probe of Sparse Adversarial Perturbations (Canvas/WebGL/Audio) in Browser Fingerprinting
-> previously known as **"Shadow Puppeteer"**
+> previously known as **"Shadow Puppeteer"** by **"Pardhu Sree Rushi Varma Konduru"**
 
 **Experiment Query** : Do sparse, deterministic adversarial perturbations measurably alter browser fingerprinting surfaces under realistic execution conditions?
 
