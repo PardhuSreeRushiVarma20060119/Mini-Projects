@@ -1,5 +1,6 @@
 # BookSphere
-- By Tejaswini
+> By Tejaswini
+
 BookSphere is a modern, full-stack online book store application built with React, TypeScript, and Express. It features a responsive UI, real-time analytics for admins, and a seamless shopping experience for users.
 
 ## Features
